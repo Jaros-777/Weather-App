@@ -13,9 +13,11 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState(0);
   const [wind, setWind] = useState(0);
+  const [icon, setIcon] = useState(0);
+  const val =`https://openweathermap.org/img/wn/${icon}@2x.png`
 
   const [city, setCity]= useState("London")
-  const [cityName, setCityName]= useState("London")
+  const [cityName, setCityName]= useState(city)
 
   const search = async(city)=> {
     try {
@@ -23,11 +25,12 @@ function App() {
 
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       // console.log(data.main.temp);
       setTemp(data.main.temp);
       setHumidity(data.main.humidity);
       setWind(data.wind.speed);
+      setIcon(data.weather[0].icon)
 
     } catch (error) {
       setCityName("Town not found")
@@ -42,17 +45,27 @@ function App() {
         console.log(city)
       },[])
 
-  
+  function changeTown()
+  {
+    search(city) 
+    console.log({city}), 
+    setCityName(city)
+    console.log(icon)
+  }
 
   return (
     <>
     <div id='main-container' >
       <div id='input-field'>
-        <input type="text" placeholder='Search' onChange={(e)=> {setCity(e.target.value)}}/>
-        <button onClick={()=> {search(city), console.log({city}, setCityName(city))}} ><img src={searchIcon} alt="" /></button>
+        <input onKeyDown={(e) => {
+              if (e.key == "Enter"){
+                changeTown();
+              }
+            }} type="text" placeholder='Search' onChange={(e)=> {setCity(e.target.value)}}/>
+        <button onClick={changeTown} ><img src={searchIcon} alt="" /></button>
       </div>
       <div id='center'>
-        <img src={sun} alt="sun" />
+        <img src={val} alt="sun" />
         <div style={{display: "flex", alignItems: "end"}}>
         <p style={{fontSize:"10vh"}} >{Math.floor(temp)}</p>
         <p style={{fontSize:"9vh"}} ><sup>o</sup>c</p>
