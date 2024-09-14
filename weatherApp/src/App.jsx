@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 function App() {
 
-  const apiKey = "e277829c34c5f9721a82494c55ff26ff"
+  const apiKey = "YOUR API KEY"
 
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState(0);
