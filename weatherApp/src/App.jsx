@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./navBar.jsx";
 
 function App() {
-  const apiKey = "YOUR API KEY";
+  const apiKey = "YOU API KEY";
 
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState(0);
@@ -17,8 +17,8 @@ function App() {
   const [icon, setIcon] = useState(0);
   const val = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
-  const [city, setCity] = useState("#");
-  const [cityName, setCityName] = useState(city);
+  const [city, setCity] = useState("Warszawa");
+  const [cityName, setCityName] = useState("Warszawa");
 
 
   const search = async (city) => {
@@ -33,6 +33,7 @@ function App() {
       setHumidity(data.main.humidity);
       setWind(data.wind.speed);
       setIcon(data.weather[0].icon);
+      setCityName(city);
     } catch (error) {
       setCityName("Town not found");
       setTemp(0);
@@ -42,16 +43,12 @@ function App() {
   };
 
   useEffect(() => {
-    // search(city);
-    // console.log(city);
+    search(city);
   }, []);
 
   function changeTown(City) {
-    setCity(City);
     search(City);
-    setCityName(City);
-    console.log({ City });
-    console.log(icon);
+    
   }
 
   return (

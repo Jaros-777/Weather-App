@@ -39,6 +39,25 @@
   width: 20%;
   border-radius: 0px;
 }
+#top #fav-btn:hover {
+  background-color: rgb(245, 220, 220);
+}
+#top #fav-btn:hover #fav-hint {
+  display: block;
+}
+
+#top #fav-btn #fav-hint {
+  position: absolute;
+  display: none;
+  top: 11vh;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1vh;
+}
+#top #fav-btn #fav-hint p {
+  font-size: 2vh;
+}
 
 #top img {
   height: 80%;
@@ -91,9 +110,9 @@ ul {
   text-align: center;
 }
 
-#fav-location-list li button img{
-    height: 3vh;
-    margin-left: 1vw;
+#fav-location-list li button img {
+  height: 3vh;
+  margin-left: 1vw;
 }
 
 #fav-location-list li button:hover {
@@ -102,4 +121,14 @@ ul {
 
 li:hover ul {
   display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  ul {
+    top: 13vh;
+    right: 3vw;
+  }
+  #top #fav-btn:hover #fav-hint {
+    display: none;
+  }
 }

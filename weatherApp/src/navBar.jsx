@@ -57,14 +57,18 @@ function NavBar(props) {
         </div>
         <button onClick={addFavLoc} id="fav-btn">
           <img src={favouriteIcon ? fullStar : emptyStar} alt="emptyStar" />
+          <div id="fav-hint" >
+            <p>Add to favourite</p>
+          </div>
         </button>
-        <button onClick={props.changeTown}>
+        <button onClick={()=>{props.changeTown(props.city)}}>
           <img src={searchIcon} alt="searchIcon" />
         </button>
         <div id="fav-location">
           <li>
             <img src={iconList} alt="iconList" />
             <ul id="fav-location-list">
+              <p style={{borderBottom: "2px solid black"}} >Favourite Locations</p>
               {favoriteLocation.length === 0 ? (
                 <p>Empty</p>
               ) : (
