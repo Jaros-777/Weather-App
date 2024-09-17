@@ -31,7 +31,10 @@
   align-items: center;
   border: none;
   border-left: 1px solid black;
-  background-color: white;
+}
+
+#top button:hover {
+  background-color: rgb(245, 220, 220);
 }
 
 #top #fav-btn {
@@ -39,9 +42,7 @@
   width: 20%;
   border-radius: 0px;
 }
-#top #fav-btn:hover {
-  background-color: rgb(245, 220, 220);
-}
+
 #top #fav-btn:hover #fav-hint {
   display: block;
 }
@@ -54,6 +55,7 @@
   border: 2px solid black;
   border-radius: 10px;
   padding: 1vh;
+  color: black;
 }
 #top #fav-btn #fav-hint p {
   font-size: 2vh;
@@ -98,6 +100,7 @@ ul {
 
 #fav-location-list li {
   margin: 0.5vh 0vh;
+  background-color: #c59fdf;
 }
 #fav-location-list li button {
   border: none;
@@ -108,6 +111,7 @@ ul {
   align-content: center;
   justify-content: center;
   text-align: center;
+  
 }
 
 #fav-location-list li button img {
@@ -117,6 +121,7 @@ ul {
 
 #fav-location-list li button:hover {
   background-color: rgb(245, 220, 220);
+  color: black;
 }
 
 li:hover ul {

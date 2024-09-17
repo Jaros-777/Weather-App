@@ -61,12 +61,12 @@ function NavBar(props) {
             <p>Add to favourite</p>
           </div>
         </button>
-        <button onClick={()=>{props.changeTown(props.city)}}>
+        <button id="fav-btn-search" onClick={()=>{props.changeTown(props.city)}}>
           <img src={searchIcon} alt="searchIcon" />
         </button>
         <div id="fav-location">
           <li>
-            <img src={iconList} alt="iconList" />
+            <img style={{backgroundColor: "#c59fdf"}} src={iconList} alt="iconList" />
             <ul id="fav-location-list">
               <p style={{borderBottom: "2px solid black"}} >Favourite Locations</p>
               {favoriteLocation.length === 0 ? (

@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./navBar.jsx";
 
 function App() {
-  const apiKey = "YOU API KEY";
+  const apiKey = "YOUR API KEY";
 
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState(0);

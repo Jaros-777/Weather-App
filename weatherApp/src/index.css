@@ -5,7 +5,7 @@
 
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #242424; */
-  background-image: linear-gradient(to top right, rgb(77, 77, 238), rgb(252, 69, 69));
+  background-image: linear-gradient(to top , #c59fdf, #8363d5);
 
 }
 
@@ -16,4 +16,25 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+input{
+  background-color: #c59fdf;
+  color: #FFFFFF;
+}
+button{
+  background-color: #c59fdf;
+  color: white;
+}
+
+::placeholder{
+  color: #FFFFFF;
+  font-size: 2vh;
+}
+
+@media only screen and (max-width:600px) {
+  :root{
+    background-color: rgb(151, 165, 202);
+    background-image: none;
+  }
 }
