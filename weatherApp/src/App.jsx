@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./navBar.jsx";
 
 function App() {
-  const apiKey = "YOUR API KEY";
+  const apiKey = import.meta.env.VITE_APP_API_KEY;
 
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState(0);
@@ -27,7 +27,7 @@ function App() {
 
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       // console.log(data.main.temp);
       setTemp(data.main.temp);
       setHumidity(data.main.humidity);

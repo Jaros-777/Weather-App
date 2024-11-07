@@ -6,7 +6,7 @@ import emptyStar from "./assets/icon-empty-star.png";
 import fullStar from "./assets/icon-full-star.png";
 import trash from "./assets/icon-trash.png";
 import { v4 as uuid } from "uuid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function NavBar(props) {
   const [favouriteIcon, setFavouriteIcon] = useState(false);
@@ -37,6 +37,16 @@ function NavBar(props) {
     };
     setFavouriteLocation([...favoriteLocation, newLoc])
   }
+
+  useEffect(()=>{
+    const fav = favoriteLocation.find((e)=>e.name === props.city)
+    if(fav){
+      setFavouriteIcon(true)
+    }else{
+      setFavouriteIcon(false)
+    }
+    // console.log(fav)
+  },[props.city])
 
   return (
     <>
